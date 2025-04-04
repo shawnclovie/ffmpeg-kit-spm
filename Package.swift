@@ -32,11 +32,9 @@ let package = Package(
     products: [
         .library(
             name: "FFmpeg-Kit",
-            type: .dynamic,
             targets: ["FFmpeg-Kit", "ffmpegkit"]),
         .library(
             name: "FFmpeg",
-            type: .dynamic,
             targets: ["FFmpeg"] + libAVFrameworks.map { $0.key }),
     ] + libAVFrameworks.map { .library(name: $0.key, targets: [$0.key]) },
     dependencies: [],
